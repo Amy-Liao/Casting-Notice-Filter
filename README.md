@@ -13,6 +13,6 @@ https://github.com/Amy-Liao/search_casting_notice_flaskapp/assets/72532191/45d1e
 python app.py
 ```
 3. Input your gender, preferred age range, and specify a date (messages will be filtered from this date onward)
-4. Upload LINE chat text file
+4. Upload LINE chat text file (Sample file can be found in the repository: LINE_chat_sample.txt)
 
 The application will generate a list of casting notices that match your criteria.
