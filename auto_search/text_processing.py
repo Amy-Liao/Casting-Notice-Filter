@@ -18,7 +18,7 @@ def extract_messages_from_file(search_file, search_date:str, age_lower:int, age_
         if char == b'\r':
             message = buffer[::-1].decode().strip()
             message = message.replace('\n', '<br>')
-            print(message)
+            # print(message)
             if message.startswith(search_date):
                 messages.append({'title': cnt, 'content': "⬆️ Since "+message})
                 break
@@ -66,7 +66,7 @@ def extract_message(message:str, my_age_lower:int, my_age_upper:int, my_gender:t
     character_gender_pattern = r"(男|女|male|female)"
     character_ages = re.findall(character_age_pattern, message)
     character_genders = re.findall(character_gender_pattern, message)
-    print(f"Character ages: {character_ages}")
+    # print(f"Character ages: {character_ages}")
     
     # Check "Age" data
     if len(character_ages)==0:
@@ -77,7 +77,7 @@ def extract_message(message:str, my_age_lower:int, my_age_upper:int, my_gender:t
             age = re.search(number_only_pattern, ch_age).group()
             if age.isdigit():           # case that the messsage specified age
                 if (my_age_lower<=int(age)) and (int(age)<=my_age_upper):
-                    print(ch_age)
+                    # print(ch_age)
                     fit_age.append(ch_age)
                     age_qualified = 1
             else:                       # case that the message contains age range  
@@ -86,7 +86,7 @@ def extract_message(message:str, my_age_lower:int, my_age_upper:int, my_gender:t
                         require_age = list(map(int, age.split(delimiter)))
                         if check_range(require_age, my_age_upper, my_age_lower):
                             age_qualified = 1
-                            print(ch_age)
+                            # print(ch_age)
                             fit_age.append(ch_age)
                             break
 
@@ -96,11 +96,11 @@ def extract_message(message:str, my_age_lower:int, my_age_upper:int, my_gender:t
     else:
         for gender in character_genders:
             if my_gender=='F' and (gender=="female" or gender=="女"):
-                print(gender)
+                # print(gender)
                 fit_gen.append(gender)
                 gender_qualified = 1
             elif my_gender=='M' and (gender=="male" or gender=="男"):
-                print(gender)
+                # print(gender)
                 fit_gen.append(gender)
                 gender_qualified = 1
 
