@@ -1,17 +1,18 @@
-# search_casting_notice_flaskapp
-Search qualified messages given user input  
-Casting messages are often released by agents via LINE group in Taiwan. Everyday, there might be 10-20 messages in the group. Therefore, I would like to find a way to filter those are suitable for me based on my gender and age. 
+# Casting Notice Filter
+This repository utilizes regular expressions to filter casting messages that match users' qualifications based on gender and age.
+
+Casting messages are frequently disseminated by agents via LINE groups in Taiwan. Typically, there are 10-20 messages daily within these groups. To expedite the process of finding relevant casting opportunities, this application allows users to specify their gender, age range, and a specific date to filter messages from.
 
 ## Demo
 https://github.com/Amy-Liao/search_casting_notice_flaskapp/assets/72532191/45d1ea47-5de7-49b2-b432-5f73a1124d1f
 
 ## Usage
 1. Export LINE group chat
-2. run
+2. Run the application using:
 ```
 python app.py
 ```
-3. Input your gender, age range. Input a date. (It will look for messages from that date)
+3. Input your gender, preferred age range, and specify a date (messages will be filtered from this date onward)
 4. Upload LINE chat text file
 
-It will generate those casting notices you are qualified.
+The application will generate a list of casting notices that match your criteria.
